@@ -1,0 +1,38 @@
+<div class="text-center" style="background-color: #e3f2fd83;"><h2 >Product Registration</h2></div>
+<!-- required , pattern, min, max, minlength, maxlength  -->
+<form #form="ngForm" ngNativeValidate>
+  <div class="container">
+  <div class=form-row>
+    <div class="col-md-6">
+      <label for="name">Name:
+        <input #field="ngModel" pattern="X.*" required type="text" class=form-control name=name id=name [(ngModel)]='prodName'>
+      </label>    
+      <div class="alert alert-danger" [hidden]="field.untouched || field.valid">
+        Enter product name
+      </div>
+    </div>
+    <div class="col-sm-2 col-form-label">
+      <label for="year">Year:
+        <input min=1994 max=2019 type="number" class=form-control name=year id=year [(ngModel)]='prodYear'>
+      </label>
+    </div>
+  </div>
+  <div class=form-row>
+      <div class="col-md-6">
+        <label for="price">Price:
+          <input type="text" class=form-control name=price id=price [(ngModel)]='prodPrice' >
+        </label>
+      </div>
+      <div class="col-md-6">
+        <label for="image">Image:
+          <input type="file" class=form-control-file name=image id=image [(ngModel)]='prodImage'>
+        </label>
+      </div>
+    </div>
+    <div class=form-row>
+        <div class="col">
+          <button class="btn btn-primary">Submit</button>
+        </div>        
+      </div>
+</div>
+</form>

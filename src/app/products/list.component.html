@@ -1,0 +1,18 @@
+<div class="text-center " style="background-color: #1a659b70;"> <h1>Products List</h1></div>
+<div class="container">
+<table class="table" *ngIf="products && products.length" >
+  <tr>
+      <th>Name</th>
+      <th>Year</th>
+      <th>Price</th>
+      <th>Image</th>
+  </tr>
+  <tr *ngFor="let prod of products">
+     <td> {{prod.pname | uppercase}} </td>
+     <td>{{prod.year}}</td>
+        <td> {{prod.price | currency}} </td>
+     <td> <img width="95px" src={{prod.imageUrl}}> </td>
+  </tr>
+</table>
+
+</div>
